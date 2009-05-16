@@ -2,7 +2,13 @@
 " Last Change:	2009 May 15
 " Maintainer:	Konstantin Lepa <konstantin.lepa@gmail.com>
 " License:	This file is placed in the public domain.
-" Version:      1.0.0
+" Version:      1.0.1
+"
+" Changes {{{
+" 1.0.1 2009-05-16
+"   Fixed bug in parsing g:sme_filelist.
+"
+"}}}
 
 if exists("g:loaded_smartmatcheol")
   finish
@@ -40,8 +46,8 @@ function s:MatchDel(fname, fext)
   endif
 endfunction
 
-au BufWinEnter * call s:MatchAdd(expand("<amatch>:r:t"), expand("<amatch>:e"))
-au BufWinLeave * call s:MatchDel(expand("<amatch>:r:t"), expand("<amatch>:e"))
+au BufWinEnter * call s:MatchAdd(expand("<amatch>:t:r"), expand("<amatch>:e"))
+au BufWinLeave * call s:MatchDel(expand("<amatch>:t:r"), expand("<amatch>:e"))
 
 let &cpo = s:save_cpo
 
