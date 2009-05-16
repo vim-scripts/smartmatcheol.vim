@@ -1,0 +1,7 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2635
+
+If you don't want to highlight trailing whitespaces in all filetypes, then you can use the plug-in.
+
+NB: If you are using `textwidth' option, then plug-in will highlight all characters after `textwidth' length.
+
+
